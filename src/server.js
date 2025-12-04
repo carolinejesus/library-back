@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import pkg from "pg";
 import livrosRoutes from "./routes/livrosRoutes.js";
 import reservaRoutes from "./routes/reservaRoutes.js";
 import usuarioRoutes from "./routes/usuarioRoutes.js";
@@ -9,19 +8,7 @@ import loginRoutes from "./routes/loginRoutes.js"
 import path from "path";
 import { fileURLToPath } from "url";
 
-
-
 dotenv.config();
-const { Pool } = pkg;
-
-const pool = new Pool({
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE,
-    ssl: { rejecUnauthorized: false }
-});
 
 const app = express();
 app.use(cors());

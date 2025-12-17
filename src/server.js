@@ -13,7 +13,6 @@ dotenv.config();
 const app = express();
 
 const allowedOrigins = [
-    "http://localhost:5173",
     "https://library-front-dusky.vercel.app"
 ]
 

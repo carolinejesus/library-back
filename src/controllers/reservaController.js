@@ -163,6 +163,8 @@ export const cancelarReserva = async (req, res) => {
 export const finalizarReserva = async (req, res) => {
     const { id } = req.params;
 
+    // console.log(req.user)
+
     try {
         const reservaResult = await pool.query(
             "SELECT * FROM reserva WHERE id = $1",
